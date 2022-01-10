@@ -40,8 +40,6 @@ Net
 Move Left: 9
 Move Right: 0
 ```
-<br>
-
 
 ## How to Build
 First, download the SDL Development Library from [here](https://www.libsdl.org/download-2.0.php). Extract the folder, and rename it SDL2. Put this folder in the 'src' directory. You can now build the solution in Visual Studio, or from the command line with MSBuild.
