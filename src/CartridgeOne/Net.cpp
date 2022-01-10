@@ -34,6 +34,18 @@ void Net::resize() {
 	_xPos = ((windowWidth / 2) - (_width / 2));
 }
 
+void Net::processInput() {
+	// Grab a list of all key states.
+	const Uint8* keystate = SDL_GetKeyboardState(NULL);
+
+	if (keystate[SDL_SCANCODE_9]) {
+		_xPos -= 8;
+	}
+	if (keystate[SDL_SCANCODE_0]) {
+		_xPos += 8;
+	}
+}
+
 void Net::renderNet() {
 	SDL_Rect net;
 

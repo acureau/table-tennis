@@ -16,6 +16,7 @@ void Game::initialize(const char* title, int xPos, int yPos, int width, int heig
 
 	if (SDL_Init(SDL_INIT_EVERYTHING) == 0) {
 		gameWindow = SDL_CreateWindow(title, xPos, yPos, width, height, flags);
+		SDL_SetWindowPosition(gameWindow, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED);
 		if (gameWindow) {
 			gameRenderer = SDL_CreateRenderer(gameWindow, -1, 0);
 			if (gameRenderer) {
@@ -61,6 +62,9 @@ void Game::update() {
 	ball->processInput(leftPaddle, rightPaddle);
 	ball->checkCollision(leftPaddle, rightPaddle);
 	ball->move();
+
+	// Process net input.
+	net->processInput();
 }
 
 void Game::resize() {

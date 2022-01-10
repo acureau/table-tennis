@@ -11,6 +11,7 @@ public:
 	void renderNet();
 	void resize();
 	void initialize();
+	void processInput();
 
 private:
 	int _width, _height;
